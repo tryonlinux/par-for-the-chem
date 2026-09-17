@@ -3,7 +3,9 @@
 A golf-style chemistry puzzle. Each of nine holes is a scrambled grid of element
 tiles with a compound named beside every row and column: *Water*, *Table salt*,
 *Stomach acid*. Swap neighbours until every line holds exactly its compound's atoms,
-with blanks in the leftover cells. Every swap is a stroke. Fewest strokes wins.
+with blanks in the leftover cells. Order within a line doesn't matter (H O H and
+O H H both make Water); the puzzle is getting each atom into the right row *and*
+column at once. Every swap is a stroke. Fewest strokes wins.
 
 Live at **[parchem.tryonlinux.com](https://parchem.tryonlinux.com)**.
 
