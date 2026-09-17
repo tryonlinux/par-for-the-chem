@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Par for the Chem">
+  <rect width="128" height="128" rx="28" fill="#0e8f7e"/>
+  <path d="M14 100c20-14 80-14 100 0v14a0 0 0 0 1 0 0H14z" fill="#16a34a"/>
+  <ellipse cx="86" cy="100" rx="11" ry="4" fill="#0b3b2f"/>
+  <path d="M86 100V26" stroke="#fcfdfb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M88 26l26 10-26 10z" fill="#f5c542"/>
+  <g font-family="ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <rect x="14" y="34" width="44" height="44" rx="10" fill="#fcfdfb"/>
+    <rect x="14" y="72" width="44" height="6" rx="3" fill="#ef4444"/>
+    <text x="36" y="67" font-size="30" fill="#17231f">O</text>
+  </g>
+</svg>

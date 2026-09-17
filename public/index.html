@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Par for the Chem — a daily chemistry puzzle played like golf</title>
+  <meta name="description" content="Nine scrambled grids of atoms. Swap tiles until every row and column holds exactly the compound named beside it, in as few strokes as you can. A new Par for the Chem course every day.">
+  <meta name="theme-color" content="#eef3ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1614" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://parchem.tryonlinux.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Par for the Chem">
+  <meta property="og:title" content="Par for the Chem">
+  <meta property="og:description" content="Unscramble the molecules in as few swaps as you can. Nine holes of chemistry, every day.">
+  <meta property="og:url" content="https://parchem.tryonlinux.com/">
+  <meta property="og:image" content="https://parchem.tryonlinux.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A scrambled grid of element tiles next to a golf scorecard">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Par for the Chem">
+  <meta name="twitter:description" content="Unscramble the molecules in as few swaps as you can. Nine holes of chemistry, every day.">
+  <meta name="twitter:image" content="https://parchem.tryonlinux.com/og-image.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Par Chem">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Par for the Chem",
+    "url": "https://parchem.tryonlinux.com/",
+    "image": "https://parchem.tryonlinux.com/og-image.png",
+    "description": "A golf-style chemistry puzzle. Each of nine holes is a scrambled grid of element tiles; swap neighbours until every row and column holds exactly the atoms of the compound named beside it. Formulas are hidden: peeking costs a stroke. Fewest strokes wins. A new daily course for everyone, plus shareable random courses.",
+    "genre": ["Puzzle", "Educational"],
+    "applicationCategory": "Game",
+    "gamePlatform": "Web browser",
+    "playMode": "SinglePlayer",
+    "operatingSystem": "Any",
+    "inLanguage": "en",
+    "author": { "@type": "Person", "name": "Jordan Tryon" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Par for the Chem home">
+      <img class="brand-mark" src="favicon.svg" alt="" width="34" height="34">
+      <span class="brand-word">Par for the <b>Chem</b></span>
+    </a>
+    <nav class="topnav">
+      <button class="btn ghost" data-open="help" aria-label="How to play"><span class="lbl-full">How to play</span><span class="lbl-short">Help</span></button>
+      <button class="btn ghost" data-open="stats" aria-label="Notebook and stats"><span class="lbl-full">Notebook</span><span class="lbl-short">Stats</span></button>
+      <button class="btn ghost" data-open="course" aria-label="Choose a course"><span class="lbl-full">Courses</span><span class="lbl-short">New</span></button>
+      <button class="btn ghost icon-btn" data-open="settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54A.48.48 0 0 0 13.92 2h-3.84a.48.48 0 0 0-.48.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.49.49 0 0 0-.59.22L2.72 8.47a.48.48 0 0 0 .12.61l2.03 1.58c-.05.3-.07.63-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.48.48 0 0 0-.12-.61l-2.01-1.58ZM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2Z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hud">
+      <div class="hud-hole">
+        <span class="label">Hole</span>
+        <strong id="hudHole">1</strong><span class="muted">/9</span>
+      </div>
+      <div class="hud-name">
+        <span id="hudName">Hole 1</span>
+        <span class="muted small" id="hudCourse"></span>
+      </div>
+      <div class="hud-stat"><span class="label">Par</span><strong id="hudPar">2</strong></div>
+      <div class="hud-stat"><span class="label">Strokes</span><strong id="hudStrokes">0</strong></div>
+      <div class="hud-stat"><span class="label">Round</span><strong id="hudRound">–</strong></div>
+    </section>
+
+    <section class="card board-card">
+      <div class="stage" id="stage">
+        <div class="board" id="board">
+          <div class="corner" aria-hidden="true">⛳</div>
+          <div class="col-heads" id="colHeads" role="group" aria-label="Column targets. Select one for a clue."></div>
+          <div class="row-heads" id="rowHeads" role="group" aria-label="Row targets. Select one for a clue."></div>
+          <div class="tiles" id="tiles" role="group" aria-label="Tiles. Use arrow keys to move, Enter to pick a tile, then Enter on a neighbour to swap."></div>
+        </div>
+        <div class="float" id="float" aria-hidden="true"></div>
+      </div>
+
+      <div class="tools">
+        <span class="legend" aria-hidden="true"><i class="dot made"></i>Made <i class="dot near"></i>One tile off</span>
+        <span class="spacer"></span>
+        <button class="tool" id="resetBtn" title="Put the tiles back where they started. Strokes still count.">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8Z"/></svg>
+          Reset tiles
+        </button>
+        <button class="tool" id="pickBtn" title="Give up this hole and see the answer">
+          <span aria-hidden="true">🏳️</span> <span id="pickLbl">Pick up</span>
+        </button>
+      </div>
+      <div class="result" id="result" hidden>
+        <div>
+          <div class="result-term" id="resTerm"></div>
+          <div class="result-sub" id="resSub"></div>
+        </div>
+        <button class="btn primary" id="nextBtn">Next hole →</button>
+      </div>
+      <p class="msg" id="msg" aria-live="polite"></p>
+    </section>
+
+    <section class="card score-card">
+      <div class="score-head">
+        <h2>Scorecard</h2>
+        <span class="muted small" id="scoreTotal"></span>
+      </div>
+      <div id="scorecard"></div>
+    </section>
+
+    <noscript><section class="card notfound"><p>Par for the Chem needs JavaScript to run.</p></section></noscript>
+  </main>
+
+  <footer class="foot">
+    <span class="foot-group"><span>Par for the Chem</span><span class="sep" aria-hidden="true">·</span><span id="footCourse"></span></span>
+    <span class="sep foot-gsep" aria-hidden="true">·</span>
+    <span class="foot-group"><a class="foot-link" href="https://github.com/tryonlinux/par-for-the-chem" target="_blank" rel="noopener noreferrer">
+      <svg class="gh" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      Source on GitHub
+    </a></span>
+    <a class="foot-link foot-also" href="https://chemmove.tryonlinux.com/">Also try ChemMove ⚗️</a>
+    <p class="foot-support">Find this useful? You can support it with a <a href="https://buymeacoffee.com/tryomas" target="_blank" rel="noopener noreferrer">coffee</a>. Thanks!</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- How to play -->
+  <dialog id="dlg-help">
+    <div class="dlg">
+      <header><h2>How to play</h2><button class="x" data-close aria-label="Close">×</button></header>
+      <p class="lead">Each hole is a scrambled grid. Swap tiles until every row and column holds <b>exactly</b> the atoms of its compound. Fewest strokes wins.</p>
+      <div class="demo" aria-hidden="true">
+        <div class="demo-grid">
+          <span class="d-hdr"></span><span class="d-hdr d-made">🎈<small>Hydrogen</small></span><span class="d-hdr d-made">🫁<small>Oxygen</small></span><span class="d-hdr d-near">🍽️<small>Stomach acid</small></span>
+          <span class="d-hdr d-near">💧<small>Water</small></span><span class="d-tile el-h">H</span><span class="d-tile el-o">O</span><span class="d-tile el-cl d-sel">Cl</span>
+          <span class="d-hdr d-near">🎈<small>Hydrogen</small></span><span class="d-tile el-h">H</span><span class="d-tile el-o">O</span><span class="d-tile el-h d-sel">H</span>
+          <span class="d-hdr d-near">🧂<small>Table salt</small></span><span class="d-tile d-blank"></span><span class="d-tile d-blank"></span><span class="d-tile el-na">Na</span>
+        </div>
+        <div class="demo-arrow">→</div>
+        <div class="demo-grid">
+          <span class="d-hdr"></span><span class="d-hdr d-made">🎈<small>Hydrogen</small></span><span class="d-hdr d-made">🫁<small>Oxygen</small></span><span class="d-hdr d-near">🍽️<small>Stomach acid</small></span>
+          <span class="d-hdr d-made">💧<small>Water</small></span><span class="d-tile el-h">H</span><span class="d-tile el-o">O</span><span class="d-tile el-h">H</span>
+          <span class="d-hdr">🎈<small>Hydrogen</small></span><span class="d-tile el-h">H</span><span class="d-tile el-o">O</span><span class="d-tile el-cl">Cl</span>
+          <span class="d-hdr d-near">🧂<small>Table salt</small></span><span class="d-tile d-blank"></span><span class="d-tile d-blank"></span><span class="d-tile el-na">Na</span>
+        </div>
+      </div>
+      <p class="demo-cap muted small">Green names are made, gold ones are one tile off. Swapping Cl and H makes Water. Not every swap helps: row 2 slipped further away.</p>
+      <ol class="steps">
+        <li>Rows have a compound on the <b>left</b>, columns one on <b>top</b>, by common name only. The formula is up to you.</li>
+        <li>Tap a tile, then a tile <b>next to it</b>, to swap them (or swipe). Each swap is <b>1 stroke</b>. Swapping two identical tiles is free and does nothing.</li>
+        <li>A line is <b>made</b> when its atoms match the formula exactly, in any order, with <b>blank</b> tiles in the leftover cells. Made names turn <b class="c-made">green</b>; names one tile away turn <b class="c-near">gold</b>.</li>
+        <li>Make every row and column at once to sink the hole. Par is the fewest swaps that can do it.</li>
+        <li>Tap a name for a free clue: how many atoms and blanks, and a fact. <b>Peeking</b> at the formula costs <b>+1 stroke</b>.</li>
+        <li><b>Reset tiles</b> puts the board back how it started, but your strokes still count. Stuck? <b>Pick up</b> to see the answer and take par + 5.</li>
+        <li>Nine holes, from 3×3 to 5×5. Lowest score wins, just like golf.</li>
+      </ol>
+      <p class="fine">Everything you make goes in your <b>notebook</b>, with its formula. The <b>Daily</b> course is the same for everyone, and your first finish is the one that counts.</p>
+      <div class="dlg-actions"><button class="btn primary" data-close>Tee off</button></div>
+    </div>
+  </dialog>
+
+  <!-- Compound card -->
+  <dialog id="dlg-info" class="info-dlg">
+    <div class="dlg">
+      <header><h2 id="infoName">Compound</h2><button class="x" data-close aria-label="Close">×</button></header>
+      <div class="info-top">
+        <span class="info-emoji" id="infoEmoji" aria-hidden="true"></span>
+        <div>
+          <div class="info-formula" id="infoFormula">?</div>
+          <div class="muted small" id="infoWhere"></div>
+        </div>
+      </div>
+      <p id="infoFact"></p>
+      <p class="muted small" id="infoBook"></p>
+      <div class="dlg-actions">
+        <button class="btn" id="peekBtn">Peek at the formula (+1 stroke)</button>
+        <button class="btn primary" data-close>Back to the hole</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Notebook & stats -->
+  <dialog id="dlg-stats">
+    <div class="dlg">
+      <header><h2>Notebook</h2><button class="x" data-close aria-label="Close">×</button></header>
+      <div class="stat-grid" id="statGrid"></div>
+      <h3>Compounds made <span class="book-count" id="bookCount"></span></h3>
+      <div class="notebook" id="notebook"></div>
+      <h3>Recent rounds</h3>
+      <div id="recentRounds"></div>
+      <p class="fine">Your notebook and rounds are saved in this browser only. They don't sync to your other devices.</p>
+    </div>
+  </dialog>
+
+  <!-- Course picker -->
+  <dialog id="dlg-course">
+    <div class="dlg">
+      <header><h2>Choose a course</h2><button class="x" data-close aria-label="Close">×</button></header>
+      <div class="option">
+        <div>
+          <strong>Daily course</strong>
+          <div class="muted small" id="dailyStatus">Same 9 holes for everyone today.</div>
+        </div>
+        <button class="btn primary" id="playDaily">Play daily</button>
+      </div>
+      <div class="option">
+        <div>
+          <strong>Random course</strong>
+          <div class="muted small">Nine fresh holes, with a code you can share.</div>
+        </div>
+        <button class="btn" id="playRandom">Start random</button>
+      </div>
+      <form class="option" id="codeForm">
+        <label for="codeInput"><strong>Course code</strong>
+          <span class="muted small">Play a friend's course.</span></label>
+        <div class="inline">
+          <input id="codeInput" maxlength="8" placeholder="e.g. K3F9QZ" autocapitalize="characters" autocomplete="off" spellcheck="false">
+          <button class="btn">Go</button>
+        </div>
+      </form>
+      <div class="option subtle">
+        <div>
+          <strong>Current course</strong>
+          <div class="muted small" id="currentCourseInfo"></div>
+        </div>
+        <div class="inline">
+          <button class="btn ghost" id="copyLink">Copy link</button>
+          <button class="btn ghost danger" id="restartCourse">Restart</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Settings -->
+  <dialog id="dlg-settings">
+    <div class="dlg">
+      <header><h2>Settings</h2><button class="x" data-close aria-label="Close">×</button></header>
+      <label class="option switch-row">
+        <span><strong>Near misses</strong><span class="muted small">Turn a name gold when its line is one tile away. Off for a harder round.</span></span>
+        <input type="checkbox" role="switch" class="switch" data-setting="near">
+      </label>
+      <label class="option switch-row">
+        <span><strong>Element colours</strong><span class="muted small">Tint each atom with its element's colour.</span></span>
+        <input type="checkbox" role="switch" class="switch" data-setting="colors">
+      </label>
+      <label class="option switch-row">
+        <span><strong>Highlight swaps</strong><span class="muted small">Outline the tiles a selected tile can swap with.</span></span>
+        <input type="checkbox" role="switch" class="switch" data-setting="moves">
+      </label>
+      <label class="option switch-row">
+        <span><strong>Sound</strong><span class="muted small">Quiet clicks and chimes.</span></span>
+        <input type="checkbox" role="switch" class="switch" data-setting="sound">
+      </label>
+    </div>
+  </dialog>
+
+  <!-- Round complete -->
+  <dialog id="dlg-finish">
+    <div class="dlg">
+      <header><h2>Round complete</h2><button class="x" data-close aria-label="Close">×</button></header>
+      <div class="big-score">
+        <strong id="finStrokes">0</strong>
+        <span class="topar" id="finToPar">E</span>
+      </div>
+      <p class="center muted" id="finLine"></p>
+      <p class="center badge-line" id="finBadge" hidden></p>
+      <pre class="emoji-card" id="finEmoji"></pre>
+      <p class="center muted small" id="finNext"></p>
+      <div class="dlg-actions">
+        <button class="btn" id="shareBtn">Share result</button>
+        <button class="btn ghost" data-open="stats">Notebook</button>
+        <button class="btn primary" data-open="course">Another course</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="game.js"></script>
+</body>
+</html>

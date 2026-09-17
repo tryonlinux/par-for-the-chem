@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="paper" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#0e8f7e" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#17231f" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#eef3ef"/>
+  <rect width="1200" height="630" fill="url(#paper)"/>
+  <g font-family="ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" fill="#17231f">
+    <rect x="80" y="96" width="84" height="84" rx="22" fill="#0e8f7e"/>
+    <path d="M138 108v58" stroke="#fcfdfb" stroke-width="5" stroke-linecap="round"/>
+    <path d="M140 108l18 7-18 7z" fill="#f5c542"/>
+    <rect x="90" y="126" width="34" height="34" rx="8" fill="#fcfdfb"/><text x="107" y="152" font-size="22" font-weight="800" text-anchor="middle">O</text>
+    <text x="80" y="236" font-size="64" font-weight="800" letter-spacing="-1" fill="#4b5a55">Par for the</text><text x="76" y="318" font-size="120" font-weight="800" letter-spacing="-4" fill="#0e8f7e">Chem</text>
+    <text x="84" y="358" font-size="38" font-weight="600" fill="#4b5a55">Unscramble the molecules.</text>
+    <text x="84" y="408" font-size="38" font-weight="600" fill="#4b5a55">Nine holes. Fewest strokes wins.</text>
+    <rect x="84" y="468" width="320" height="64" rx="32" fill="#0e8f7e"/>
+    <text x="244" y="511" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">New course daily</text>
+  </g>
+  <g transform="translate(660 60)" font-family="ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+    <rect x="-24" y="-24" width="512" height="534" rx="36" fill="#fcfdfb" stroke="#d5e0d9" stroke-width="2" filter="url(#sh)"/>
+    <rect x="176" y="0" width="88" height="96" rx="20" fill="#d3f2dc" stroke="#16a34a" stroke-width="4"/><text x="220.0" y="43.2" font-size="30" text-anchor="middle">🎈</text><text x="220.0" y="76.80000000000001" font-size="17" font-weight="800" fill="#17231f" text-anchor="middle">Hydrogen</text>
+    <rect x="272" y="0" width="88" height="96" rx="20" fill="#d3f2dc" stroke="#16a34a" stroke-width="4"/><text x="316.0" y="43.2" font-size="30" text-anchor="middle">🫁</text><text x="316.0" y="76.80000000000001" font-size="17" font-weight="800" fill="#17231f" text-anchor="middle">Oxygen</text>
+    <rect x="368" y="0" width="88" height="96" rx="20" fill="#fbefc8" stroke="#d69e10" stroke-width="4"/><text x="412.0" y="43.2" font-size="30" text-anchor="middle">🍽️</text><text x="412.0" y="76.80000000000001" font-size="17" font-weight="800" fill="#17231f" text-anchor="middle">Stomach</text>
+    <rect x="0" y="104" width="168" height="88" rx="20" fill="#fbefc8" stroke="#d69e10" stroke-width="4"/><text x="34" y="159.0" font-size="30" text-anchor="middle">💧</text><text x="114" y="156.0" font-size="21" font-weight="800" fill="#17231f" text-anchor="middle">Water</text>
+    <rect x="0" y="200" width="168" height="88" rx="20" fill="#fbefc8" stroke="#d69e10" stroke-width="4"/><text x="34" y="255.0" font-size="30" text-anchor="middle">🎈</text><text x="114" y="252.0" font-size="21" font-weight="800" fill="#17231f" text-anchor="middle">Hydrogen</text>
+    <rect x="0" y="296" width="168" height="88" rx="20" fill="#fbefc8" stroke="#d69e10" stroke-width="4"/><text x="34" y="351.0" font-size="30" text-anchor="middle">🧂</text><text x="114" y="348.0" font-size="21" font-weight="800" fill="#17231f" text-anchor="middle">Table salt</text>
+    <rect x="176" y="104" width="88" height="88" rx="18" fill="#dde4ee" stroke="#9fb3cc" stroke-width="2"/><text x="185" y="125" font-size="15" font-weight="600" fill="#62706b">1</text><text x="220" y="166" font-size="37" font-weight="800" fill="#17231f" text-anchor="middle">H</text>
+    <rect x="272" y="104" width="88" height="88" rx="18" fill="#fbd0d0" stroke="#ef4444" stroke-width="2"/><text x="281" y="125" font-size="15" font-weight="600" fill="#62706b">8</text><text x="316" y="166" font-size="37" font-weight="800" fill="#17231f" text-anchor="middle">O</text>
+    <rect x="368" y="104" width="88" height="88" rx="18" fill="#c9f0d6" stroke="#0e8f7e" stroke-width="5"/><text x="377" y="125" font-size="15" font-weight="600" fill="#62706b">17</text><text x="412" y="166" font-size="32" font-weight="800" fill="#17231f" text-anchor="middle">Cl</text>
+    <rect x="176" y="200" width="88" height="88" rx="18" fill="#dde4ee" stroke="#9fb3cc" stroke-width="2"/><text x="185" y="221" font-size="15" font-weight="600" fill="#62706b">1</text><text x="220" y="262" font-size="37" font-weight="800" fill="#17231f" text-anchor="middle">H</text>
+    <rect x="272" y="200" width="88" height="88" rx="18" fill="#fbd0d0" stroke="#ef4444" stroke-width="2"/><text x="281" y="221" font-size="15" font-weight="600" fill="#62706b">8</text><text x="316" y="262" font-size="37" font-weight="800" fill="#17231f" text-anchor="middle">O</text>
+    <rect x="368" y="200" width="88" height="88" rx="18" fill="#dde4ee" stroke="#0e8f7e" stroke-width="5"/><text x="377" y="221" font-size="15" font-weight="600" fill="#62706b">1</text><text x="412" y="262" font-size="37" font-weight="800" fill="#17231f" text-anchor="middle">H</text>
+    <rect x="176" y="296" width="88" height="88" rx="18" fill="none" stroke="#cfdad3" stroke-width="3" stroke-dasharray="8 6"/><circle cx="220.0" cy="340.0" r="8" fill="#cfdad3"/>
+    <rect x="272" y="296" width="88" height="88" rx="18" fill="none" stroke="#cfdad3" stroke-width="3" stroke-dasharray="8 6"/><circle cx="316.0" cy="340.0" r="8" fill="#cfdad3"/>
+    <rect x="368" y="296" width="88" height="88" rx="18" fill="#ecdcfd" stroke="#a855f7" stroke-width="2"/><text x="377" y="317" font-size="15" font-weight="600" fill="#62706b">11</text><text x="412" y="358" font-size="32" font-weight="800" fill="#17231f" text-anchor="middle">Na</text>
+    <g font-size="20" font-weight="700" text-anchor="middle">
+      <text x="10" y="420" text-anchor="start" fill="#62706b" font-size="16" letter-spacing="1">HOLE</text>
+      <text x="10" y="454" text-anchor="start" fill="#62706b" font-size="16" letter-spacing="1">SCORE</text>
+      <text x="110" y="420" fill="#0e8f7e">1</text>
+      <text x="150" y="420" fill="#0e8f7e">2</text>
+      <text x="190" y="420" fill="#0e8f7e">3</text>
+      <text x="230" y="420" fill="#0e8f7e">4</text>
+      <text x="270" y="420" fill="#0e8f7e">5</text>
+      <text x="310" y="420" fill="#0e8f7e">6</text>
+      <text x="350" y="420" fill="#0e8f7e">7</text>
+      <text x="390" y="420" fill="#0e8f7e">8</text>
+      <text x="430" y="420" fill="#0e8f7e">9</text>
+      <text x="110" y="454" fill="#17231f">2</text>
+      <circle cx="150" cy="447" r="15" fill="none" stroke="#2563eb" stroke-width="3"/>
+      <text x="150" y="454" fill="#2563eb">2</text>
+      <text x="190" y="454" fill="#17231f">3</text>
+      <rect x="215" y="432" width="30" height="30" rx="3" fill="none" stroke="#c2410c" stroke-width="3"/>
+      <text x="230" y="454" fill="#c2410c">4</text>
+      <text x="270" y="454" fill="#17231f">4</text>
+    </g>
+    <text x="440" y="-34" font-size="30" font-weight="800" fill="#2563eb" text-anchor="middle">Birdie!</text>
+  </g>
+</svg>
